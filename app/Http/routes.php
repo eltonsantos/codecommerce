@@ -15,5 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/categories', 'AdminCategoriesController@index');
-Route::get('admin/products', 'AdminProductsController@index');
+Route::get('admin/category/{$id}', 'AdminCategoriesController@edit');
+Route::post('admin/categories', 'AdminCategoriesController@index');
+Route::delete('admin/category/{$id}', 'AdminCategoriesController@destroy');
+Route::put('admin/category/{$id}', 'AdminCategoriesController@update');
+
+Route::get('admin/product{$id}', 'AdminProductsController@edit');
+Route::post('admin/products', 'AdminProductsController@index');
+Route::delete('admin/product/{$id}', 'AdminProductsController@destroy');
+Route::put('admin/product/{$id}', 'AdminProductsController@update');
