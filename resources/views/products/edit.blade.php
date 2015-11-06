@@ -27,12 +27,12 @@
         </div>
         <div class="form-group">
             {!! Form::label('featured', 'Featured?') !!}
-            {!! Form::select('featured', ['0' => 'Yes', '1' => 'No'], $product->featured) !!}
+            {!! Form::select('featured', ['1' => 'Yes', '0' => 'No'], $product->featured) !!}
         </div>
         <div class="form-group">
             {!! Form::label('recommend', 'Recommend?') !!}
-            {!! Form::radio('recommend', '0', true) !!} Yes
-            {!! Form::radio('recommend', '1', false) !!} No
+            {!! Form::radio('recommend', '1', ($product->recommend) ? true : false, ['class' => 'field']) !!} Yes
+            {!! Form::radio('recommend', '0', (!$product->recommend) ? true : false, ['class' => 'field']) !!} No
         </div>
         <div class="form-group">
             {!! Form::submit('Save Product', ['class' => 'btn btn-primary form-control']) !!}
