@@ -35,8 +35,7 @@
             {!! Form::radio('recommend', '0', false) !!} No
         </div>
         <div class="form-group">
-            {!! Form::submit('Add Product', ['class' => 'btn btn-primary form-control']) !!}
-            {!! Form::button('<i class="glyphicon glyphicon-add"></i> Add Product', array('type' => 'submit', 'class' => 'btn btn-primary form-control pull-right')) !!}}
+            {!! Form::button('<i class="glyphicon glyphicon-add"></i> Add Product', array('type' => 'submit', 'class' => 'btn btn-primary form-control pull-right')) !!}
         </div>
         {!! Form::close() !!}
 
