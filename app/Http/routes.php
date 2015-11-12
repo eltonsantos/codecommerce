@@ -17,16 +17,6 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'where' => ['id' => '[0-9]+']], function(){
-   /* Route::get('category/{id}', 'AdminCategoriesController@edit');
-    Route::post('categories', 'AdminCategoriesController@index');
-    Route::delete('category/{id}', 'AdminCategoriesController@destroy');
-    Route::put('category/{id}', 'AdminCategoriesController@update');
-
-    Route::get('product/{id}', 'AdminProductsController@edit');
-    Route::post('products', 'AdminProductsController@index');
-    Route::delete('product/{id}', 'AdminProductsController@destroy');
-    Route::put('product/{id}', 'AdminProductsController@update');*/
-
     // Grupo de rotas para os produtos
     Route::group(['prefix' => 'products'], function(){
         Route::get('', ['as' => 'products' , 'uses' =>'ProductsController@index']);
@@ -36,7 +26,6 @@ Route::group(['prefix' => 'admin', 'where' => ['id' => '[0-9]+']], function(){
         Route::put('{id}/update', ['as' => 'products.update', 'uses' => 'ProductsController@update']);
         Route::get('{id}/destroy', ['as' => 'products.destroy', 'uses' => 'ProductsController@destroy']);
     });
-
     // Grupo de rotas para as categorias
     Route::group(['prefix' => 'categories'], function(){
         Route::get('', ['as' => 'categories' , 'uses' =>'CategoriesController@index']);
@@ -46,5 +35,4 @@ Route::group(['prefix' => 'admin', 'where' => ['id' => '[0-9]+']], function(){
         Route::put('{id}/update', ['as' => 'categories.update', 'uses' => 'CategoriesController@update']);
         Route::get('{id}/destroy', ['as' => 'categories.destroy', 'uses' => 'CategoriesController@destroy']);
     });
-
 });

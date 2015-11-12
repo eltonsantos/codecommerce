@@ -27,7 +27,9 @@ class CategoryTableSeeder extends Seeder
 
         }
 
-        /*Category::create([
+        /*
+         * GERANDO SEED MANUALMENTE
+         * Category::create([
             'name' => 'Category 1',
             'description' => 'Description Category 1'
         ]);*/
