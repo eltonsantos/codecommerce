@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use CodeCommerce\Category;
-use Faker\Factory as Faker;
+//use Faker\Factory as Faker;
 
 class CategoryTableSeeder extends Seeder
 {
@@ -16,7 +16,9 @@ class CategoryTableSeeder extends Seeder
     {
         DB::table('categories')->truncate();
 
-        $faker = Faker::create();
+        factory('CodeCommerce\Category', 10)->create();
+
+        /*$faker = Faker::create();
 
         foreach(range(1, 10) as $i){
 
@@ -25,7 +27,7 @@ class CategoryTableSeeder extends Seeder
                 'description' => $faker->sentence()
             ]);
 
-        }
+        }*/
 
         /*
          * GERANDO SEED MANUALMENTE

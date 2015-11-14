@@ -16,7 +16,9 @@ class ProductTableSeeder extends Seeder
     {
         DB::table('products')->truncate();
 
-        $faker = Faker::create();
+        factory('CodeCommerce\Product', 15)->create();
+
+        /*$faker = Faker::create();
 
         foreach(range(1, 15) as $i){
 
@@ -27,5 +29,6 @@ class ProductTableSeeder extends Seeder
             ]);
 
         }
+        */
     }
 }
