@@ -3,6 +3,10 @@
 @section("content")
     <div class="container">
         <h1>Categories</h1>
+        <a href="{{ route('categories.create') }}">
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New Category</button>
+        </a>
+        <br /><br />
         @if($categories->isEmpty())
             <div class="alert alert-warning"> Nenhuma categoria cadastrado!</div>
         @else
@@ -26,11 +30,10 @@
                     </tr>
                 @endforeach
             </table>
-        @endif
 
-        <a href="{{ route('categories.create') }}">
-            <button class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i> New Category</button>
-        </a>
+            {!! $categories->render() !!}
+
+        @endif
 
     </div>
 @endsection

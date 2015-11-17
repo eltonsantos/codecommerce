@@ -14,6 +14,10 @@
 
         {!! Form::open(['route' => ['products.update', $product->id], 'method' => 'put']) !!}
         <div class="form-group">
+            {!! Form::label('category', 'Category') !!}
+            {!! Form::select('category_id', $categories, $product->category->id, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('name', 'Name') !!}
             {!! Form::text('name', $product->name, ['class' => 'form-control']) !!}
         </div>
@@ -35,7 +39,10 @@
             {!! Form::radio('recommend', '0', (!$product->recommend) ? true : false, ['class' => 'field']) !!} No
         </div>
         <div class="form-group">
-            {!! Form::submit('Save Product', ['class' => 'btn btn-primary form-control']) !!}
+            {!! Form::submit('Save Product', ['class' => 'btn btn-primary pull-right']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::button('<i class="glyphicon glyphicon-back"></i> Back', array('class' => 'btn btn-default')) !!}
         </div>
         {!! Form::close() !!}
 

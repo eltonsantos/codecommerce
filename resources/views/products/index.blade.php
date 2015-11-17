@@ -3,6 +3,11 @@
 @section("content")
     <div class="container">
         <h1>Products</h1>
+
+        <a href="{{ route('products.create') }}">
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New Product</button>
+        </a>
+        <br /><br />
         @if($products->isEmpty())
             <div class="alert alert-warning"> Nenhum produto cadastrado!</div>
         @else
@@ -12,6 +17,7 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Category</th>
                     <th>Featured?</th>
                     <th>Recommend?</th>
                     <th>Action</th>
@@ -22,6 +28,7 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->price }}</td>
+                        <td>{{ $product->category->name }}</td>
                         <td>
                             @if($product->featured == 1)
                                 <i class="glyphicon glyphicon-ok-circle icon-green"></i>
@@ -45,11 +52,11 @@
                     </tr>
                 @endforeach
             </table>
+
+            {!! $products->render() !!}
+
         @endif
 
-        <a href="{{ route('products.create') }}">
-            <button class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i> New Product</button>
-        </a>
 
     </div>
 @endsection

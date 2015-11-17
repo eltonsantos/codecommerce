@@ -13,10 +13,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         $this->call('UserTableSeeder');
         $this->call('CategoryTableSeeder');
         $this->call('ProductTableSeeder');
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         Model::reguard();
     }

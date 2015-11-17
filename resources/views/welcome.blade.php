@@ -8,7 +8,17 @@
     </head>
     <body>
         <div class="container">
-            <h1>Loja CodeCommerce</h1>
+            <h1><a href="#">Loja CodeCommerce</a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ route('categories') }}">Categories</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('products') }}">Products</a>
+                    </li>
+                </ul>
+            </nav>
             @yield("content")
         </div>
     </body>

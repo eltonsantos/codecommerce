@@ -22,7 +22,10 @@
                 {!! Form::textarea('description', $category->description, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::submit('Save Category', ['class' => 'btn btn-primary form-control']) !!}
+                {!! Form::submit('Save Category', ['class' => 'btn btn-primary pull-right']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::button('<i class="glyphicon glyphicon-back"></i> Back', array('class' => 'btn btn-default')) !!}
             </div>
         {!! Form::close() !!}
 
